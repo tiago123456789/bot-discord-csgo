@@ -1,0 +1,6 @@
+bot/node_modules/
+bot/.env
+
+scheduler/node_modules/
+scheduler/.env
+scheduler/logs

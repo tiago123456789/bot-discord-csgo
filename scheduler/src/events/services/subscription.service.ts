@@ -44,7 +44,7 @@ export class SubscriptionService {
         return message;
     }
 
-    @Cron(CronExpression.EVERY_10_SECONDS)
+    @Cron(CronExpression.EVERY_DAY_AT_9AM)
     async notifyHasEventsToUsers() {
         try {
             this.logger.info("Getting user to notify about events")
@@ -82,5 +82,7 @@ export class SubscriptionService {
             this.logger.error(error.message)
         }
     }
+
+    
 
 }

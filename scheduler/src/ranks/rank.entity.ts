@@ -1,6 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("ranks")
+@Entity("ranks", {
+    orderBy: {
+        place: "ASC",
+    }
+})
 export class Rank {
 
     @PrimaryGeneratedColumn()

@@ -13,13 +13,22 @@ import * as winston from 'winston';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    BullModule.registerQueue({
-      name: "subscribe",
-      redis: {
-        port: 6379,
-        host: "localhost"
+    BullModule.registerQueue(
+      {
+        name: "subscribe",
+        redis: {
+          port: 6379,
+          host: "localhost"
+        }
+      },
+      {
+        name: "unsubscribe",
+        redis: {
+          port: 6379,
+          host: "localhost"
+        }
       }
-    }),
+    ),
     WinstonModule.forRoot({
       format: winston.format.combine(
         winston.format.timestamp(),

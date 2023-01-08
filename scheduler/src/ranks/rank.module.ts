@@ -7,7 +7,7 @@ import { Rank } from './rank.entity';
 @Module({
   imports: [
     CommonModule,
-    TypeOrmModule.forFeature([Rank])
+    TypeOrmModule.forFeature([Rank]),
   ],
   controllers: [],
   providers: [RankService],

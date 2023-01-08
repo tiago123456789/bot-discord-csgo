@@ -40,7 +40,8 @@ export class RankService {
     constructor(
         private readonly hltvRepository: HltvRepository,
         @InjectRepository(Rank) private repository: Repository<Rank>,
-        @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger) {
+        @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
+    ) {
     }
 
     private transformToTeamDtos
@@ -150,7 +151,7 @@ export class RankService {
             const registers: TeamDto[] = await this.getRank();
 
             this.logger.info("Gettings global rank saved in database")
-            const teamsInRank: Rank[] = await this.getAllRank();
+            const teamsInRank: Rank[] = await this.getAllGlobalRank();
 
             this.logger.info("Saving new teams on global rank table")
             await this.saveMany(registers)
@@ -176,7 +177,7 @@ export class RankService {
         return this.repository.delete(ids)
     }
 
-    private getAllRank(): Promise<Rank[]> {
+    private getAllGlobalRank(): Promise<Rank[]> {
         return this.repository.find({ where: { region: null }, select: ["id"] })
     }
 

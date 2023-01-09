@@ -15,6 +15,7 @@
     "bull": "^4.10.2",
     "cache-manager": "^4.1.0",
     "cache-manager-redis-store": "^2.0.0",
+    "dayjs": "^1.11.7",
     "discord.js": "^13.2.0",
     "dotenv": "^16.0.3",
     "hltv": "^3.4.3",

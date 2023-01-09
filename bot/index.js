@@ -28,7 +28,7 @@ async function startApplication() {
         const commandTyped = args[0]
 
         if (commands[commandTyped]) {
-            commands[commandTyped](message, args.slice(1))
+            await commands[commandTyped](message, args.slice(1))
         }
     });
 
